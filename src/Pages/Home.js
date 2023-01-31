@@ -5,6 +5,7 @@ import { Stack } from '@mui/system';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from 'react';
+import TableFooter from '../components/Table';
 
 
 
@@ -124,7 +125,9 @@ const Home = () => {
                      <Button variant="contained" color="success">ETH Transaction History</Button>
                      <Button variant="contained" color="secondary" sx={{ boxShadow: 'none', ":hover": { background: '#eef2fe' } }}>TestLink Transaction History</Button>
                   </Stack>
-
+                  <Box width={{ xs: '70%', md: '50%', lg: '40%' }} textAlign='center' marginTop='15px'>
+                     <TableFooter />
+                  </Box>
 
                </Box>
 
