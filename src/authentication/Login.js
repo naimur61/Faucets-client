@@ -90,7 +90,7 @@ const Login = () => {
             />
 
           </FormControl>
-          <Button type="submit" fullWidth='100%' variant="contained" sx={{ my: '20px' }}>Login</Button>
+          <Button type="submit" fullWidth={true} variant="contained" sx={{ my: '20px' }}>Login</Button>
         </Box>
         <Box sx={{
           textAlign: 'center', fontWeight: 600, fontSize: '13px'
