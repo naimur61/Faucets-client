@@ -85,7 +85,7 @@ const Home = () => {
                   </Box>
 
                   <Typography component='label' htmlFor='request' fontSize='13px' fontWeight='600' color='primary' >Wallet Address</Typography>
-                  <Stack direction={{ xs: 'colum', md: 'row' }} justifyContent='space-between' spacing={3} marginBottom='10px'>
+                  <Stack direction={{ xs: 'colum', md: 'row' }} justifyContent='space-between' spacing={2} marginBottom='15px'>
                      <TextField
                         id="request"
                         size="small"
@@ -115,6 +115,18 @@ const Home = () => {
                   <Button type="submit" variant="contained" sx={{ my: '20px' }} disabled={!verified}>Send Request</Button>
                </Box>
 
+
+               {/* Request History  */}
+               <Box marginTop='30px'>
+                  <Typography fontWeight='600'>Request History</Typography>
+
+                  <Stack direction='row' spacing={2} marginTop='10px'>
+                     <Button variant="contained" color="success">ETH Transaction History</Button>
+                     <Button variant="contained" color="secondary" sx={{ boxShadow: 'none', ":hover": { background: '#eef2fe' } }}>TestLink Transaction History</Button>
+                  </Stack>
+
+
+               </Box>
 
 
             </Box>
