@@ -76,9 +76,9 @@ const Navbar = () => {
                   fontSize: '25px',
                   fontWeight: '600',
                }}>Faucets</Typography>
-            <Stack direction='row' alignItems='center' spacing={2}>
+            <Stack direction='row' alignItems='center' spacing={{ xs: 0, lg: 2 }}>
 
-               <FormControl sx={{ m: 1, minWidth: 120 }} size='small'>
+               <FormControl sx={{ m: 1, maxWidth: { xs: '60px', lg: '230px' } }} size='small'>
                   <Select
                      labelId="demo-select-small"
                      id="demo-select-small"
@@ -87,7 +87,7 @@ const Navbar = () => {
                   >
                      <MenuItem value="">
                      </MenuItem>
-                     {selectOptions.map((option, i) => <MenuItem key={i} value={i}><Stack direction='row' spacing={2} alignItems='center'><Box component='img' src={option?.img} alt="" sx={{ height: '15px', width: '15px' }} />  <Box>{option?.txt}</Box></Stack></MenuItem>)}
+                     {selectOptions.map((option, i) => <MenuItem key={i} value={i}><Stack direction='row' spacing={{ xs: 5, lg: 2 }} alignItems='center'><Box component='img' src={option?.img} alt="" sx={{ height: '15px', width: '15px' }} />  <Box>{option?.txt}</Box></Stack></MenuItem>)}
                   </Select>
                </FormControl>
 
