@@ -63,7 +63,8 @@ const Navbar = () => {
                sx={{
                   fontSize: '25px',
                   fontWeight: '600',
-               }}>Faucets</Typography>
+                  cursor: 'pointer'
+               }} onClick={() => navigate('/')}>Faucets</Typography>
             <Stack direction='row' alignItems='center' spacing={{ xs: 0, lg: 2 }}>
 
                <FormControl sx={{ m: 1, maxWidth: { xs: '60px', lg: '230px' } }} size='small'>
