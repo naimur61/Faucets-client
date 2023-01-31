@@ -143,8 +143,9 @@ const Navbar = () => {
                position: ' fixed',
                right: ' 0',
                top: ' 50%',
-               transformOrigin: ' center',
+               transformOrigin: 'center',
                zIndex: ' 9',
+               width: '450px;'
             }}
          >
             <Box
@@ -163,7 +164,18 @@ const Navbar = () => {
                </Typography>
                <Box id="modal-modal-description" sx={{ mt: 2 }}>
                   <Stack direction={{ xs: 'column', lg: 'row' }} alignItems='center' spacing={2}>
-
+                     {wallets.map((w, i) => <Box sx={{
+                        background: '#f5f7fd',
+                        cursor: ' pointer',
+                        margin: ' 10px',
+                        padding: ' 20px',
+                        textAlign: ' center',
+                     }}>
+                        <Box component='img' src={w.img} alt=''
+                           sx={{ height: '100px', width: '100px', }} />
+                        {/* <Typography variant="h6" fontWeight='600' component="h4">{w.txt}</Typography> */}
+                        <Typography>{w.txt}</Typography>
+                     </Box>)}
 
                   </Stack>
                </Box>
