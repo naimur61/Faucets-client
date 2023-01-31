@@ -48,8 +48,9 @@ const Navbar = () => {
          }}>
             <Typography
                variant='h2'
+               color='primary'
                sx={{
-                  color: '#9b1fe9',
+
                   fontSize: '25px',
                   fontWeight: '600',
                }}>Faucets</Typography>
