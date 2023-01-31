@@ -91,7 +91,10 @@ const Navbar = () => {
                   </Select>
                </FormControl>
 
-               <Button variant="outlined" size="medium" onClick={handleOpen}><IoWallet style={{ marginRight: "10px" }} /> Connect Wallet</Button>
+               <Button variant="outlined" size="medium" onClick={handleOpen} sx={{ display: { xs: 'none', lg: 'block' } }}><IoWallet style={{ marginRight: "10px" }} />Connect Wallet</Button>
+
+               <IconButton color="primary" size="medium" onClick={handleOpen} sx={{ display: { lg: 'none', ":hover": 'none' } }}><IoWallet style={{ marginRight: "10px" }} />
+               </IconButton>
 
 
                <Box sx={{ flexGrow: 0 }}>
@@ -170,6 +173,9 @@ const Navbar = () => {
                         margin: ' 10px',
                         padding: ' 20px',
                         textAlign: ' center',
+                        width: '165px',
+                        height: '130px'
+
                      }}>
                         <Box component='img' src={w.img} alt=''
                            sx={{ height: '100px', width: '100px', }} />
