@@ -10,12 +10,15 @@ import fantom from '../assets/select_icon/fantom.png'
 import harmony from '../assets/select_icon/harmony.jpeg'
 import poa from '../assets/select_icon/poa.png'
 import polygon from '../assets/select_icon/polygon.png'
+import MetaMasks from '../assets/select_icon/metaMask.png'
+import Wallet from '../assets/select_icon/walletConnect.svg'
 import { IoWallet } from 'react-icons/io5';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const style = {
@@ -130,14 +133,40 @@ const Navbar = () => {
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
+            sx={{
+               background: ' #fff',
+               background: ' var(--white-bg-color)',
+               border: ' 1px solid #eee',
+               left: ' 0',
+               margin: ' 0 auto',
+               padding: ' 25px',
+               position: ' fixed',
+               right: ' 0',
+               top: ' 50%',
+               transformOrigin: ' center',
+               zIndex: ' 9',
+            }}
          >
-            <Box sx={style}>
-               <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
+            <Box
+               sx={{
+                  background: '#fff',
+                  borderRadius: ' 3px',
+                  left: ' 50%',
+                  lineHeight: ' 1.4',
+                  padding: ' 14px 28px',
+                  position: ' absolute',
+                  // WebkitTransform: ' translate(-50%,-50%)',
+                  transform: ' translate(-50%,-50%)',
+               }}>
+               <Typography id="modal-modal-title" variant="h5" fontWeight='600' component="h2">
+                  Connect your waller
                </Typography>
-               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-               </Typography>
+               <Box id="modal-modal-description" sx={{ mt: 2 }}>
+                  <Stack direction={{ xs: 'column', lg: 'row' }} alignItems='center' spacing={2}>
+
+
+                  </Stack>
+               </Box>
             </Box>
          </Modal>
       </Box >
@@ -147,6 +176,16 @@ const Navbar = () => {
 export default Navbar;
 
 
+const wallets = [
+   {
+      img: MetaMasks,
+      txt: "MetaMask"
+   },
+   {
+      img: Wallet,
+      txt: "WalletConnect"
+   }
+]
 
 const selectOptions = [
    {
