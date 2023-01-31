@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Login from '../authentication/Login';
-import Registration from '../authentication/Registration';
-import FAQ from '../components/FAQ';
 import Main from '../LayOut/Main';
+import Login from '../Pages/authentication/Login';
+import Registration from '../Pages/authentication/Registration';
+import FAQ from '../Pages/FAQ';
+import Home from '../Pages/Home';
 
 
 
@@ -11,7 +12,8 @@ export const Routes = createBrowserRouter([
    // Main Layout 
    {
       path: '/', element: <Main />, children: [
-         { path: '/', element: <Login /> },
+         { path: '/', element: <Home /> },
+         { path: '/home', element: <Home /> },
          { path: '/login', element: <Login /> },
          { path: '/faq', element: <FAQ /> },
          { path: '/registration', element: <Registration /> },

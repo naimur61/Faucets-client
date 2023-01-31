@@ -9,7 +9,9 @@ import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { Stack } from '@mui/system';
-import useTitle from '../Hooks/useTitle';
+import useTitle from '../../Hooks/useTitle';
+
+
 
 const Login = () => {
   useTitle('Login');
