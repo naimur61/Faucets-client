@@ -91,7 +91,8 @@ const Registration = () => {
 
                </FormControl>
 
-               <Button type="submit" sx={{ background: '#9B1FE9', width: '100%', ":hover": { "background": "#9a0fa2" }, my: '20px' }} variant="contained">Signup</Button>
+
+               <Button type="submit" fullWidth='100%' variant="contained" sx={{ my: '20px' }}>Signup</Button>
             </Box>
             <Box sx={{
                textAlign: 'center', fontWeight: 600, fontSize: '13px'
