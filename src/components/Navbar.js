@@ -1,6 +1,7 @@
 import { Box, FormControl, MenuItem, Select, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import React, { useState } from 'react';
+import et_kovan from '../assets/select_icon/et-ethereum.webp'
 import Arbitrum from '../assets/select_icon/arbitrum.svg'
 import avalanche from '../assets/select_icon/avalanche.png'
 import bnb from '../assets/select_icon/bnb.png'
@@ -14,7 +15,7 @@ import polygon from '../assets/select_icon/polygon.png'
 
 
 const Navbar = () => {
-   const [age, setAge] = useState('');
+   const [age, setAge] = useState(0);
 
    const handleChange = (event) => {
       setAge(event.target.value);
@@ -37,8 +38,7 @@ const Navbar = () => {
                   fontSize: '25px',
                   fontWeight: '600',
                }}>Faucets</Typography>
-            <Stack direction='row'>
-
+            <Stack direction='row' alignItems='center'>
 
                <FormControl sx={{ m: 1, maxWidth: 120 }} size='small'>
                   <Select
@@ -48,7 +48,6 @@ const Navbar = () => {
                      onChange={handleChange}
                   >
                      <MenuItem value="">
-                        <em>None</em>
                      </MenuItem>
                      {selectOptions.map((option, i) => <MenuItem key={i} value={option.img}><Stack direction='row' spacing={2} alignItems='center'><Box component='img' src={option?.img} alt="" sx={{ height: '15px', width: '15px' }} />  <Box>{option?.txt}</Box></Stack></MenuItem>)}
                   </Select>
@@ -66,6 +65,10 @@ export default Navbar;
 
 
 const selectOptions = [
+   {
+      img: et_kovan,
+      txt: "Ethereum Kovan"
+   },
    {
       img: Arbitrum,
       txt: "Arbitrum Rinkeby"
