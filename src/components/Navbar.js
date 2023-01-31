@@ -169,7 +169,8 @@ const Navbar = () => {
                            textAlign: ' center',
                            width: '185px',
 
-                        }}>
+                        }}
+                           key={i}>
                            <Box><Box component='img' src={w.img} alt=''
                               sx={{ height: '100px', width: '100px', }} />
                               <Typography color='primary' fontWeight='600'>{w.txt}</Typography></Box>
