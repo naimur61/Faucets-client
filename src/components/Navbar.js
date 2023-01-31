@@ -140,48 +140,47 @@ const Navbar = () => {
                background: ' #fff',
                background: ' var(--white-bg-color)',
                border: ' 1px solid #eee',
-               left: ' 0',
+               // left: ' 0',
                margin: ' 0 auto',
-               padding: ' 25px',
+               padding: ' 15px',
                position: ' fixed',
-               right: ' 0',
                top: ' 50%',
                transformOrigin: 'center',
                zIndex: ' 9',
-               width: '450px;'
             }}
          >
+
             <Box
                sx={{
                   background: '#fff',
                   borderRadius: ' 3px',
                   left: ' 50%',
                   lineHeight: ' 1.4',
-                  padding: ' 14px 28px',
+                  padding: { xs: '2rem 4.5rem', lg: '2rem 2rem' },
                   position: ' absolute',
-                  // WebkitTransform: ' translate(-50%,-50%)',
                   transform: ' translate(-50%,-50%)',
                }}>
-               <Typography id="modal-modal-title" variant="h5" fontWeight='600' component="h2">
-                  Connect your waller
+               <Typography id="modal-modal-title" variant="h5" fontWeight='600' component="h2" sx={{ marginLeft: { xs: '-1.5rem', md: 0 }, lineBreak: 'anywhere' }}>
+                  Connect your wallet
                </Typography>
+
                <Box id="modal-modal-description" sx={{ mt: 2 }}>
                   <Stack direction={{ xs: 'column', lg: 'row' }} alignItems='center' spacing={2}>
-                     {wallets.map((w, i) => <Box sx={{
-                        background: '#f5f7fd',
-                        cursor: ' pointer',
-                        margin: ' 10px',
-                        padding: ' 20px',
-                        textAlign: ' center',
-                        width: '165px',
-                        height: '130px'
+                     {wallets.map((w, i) =>
+                        <Box sx={{
+                           background: '#f5f7fd',
+                           cursor: ' pointer',
+                           margin: ' 10px',
+                           padding: ' 20px',
+                           textAlign: ' center',
+                           width: '185px',
 
-                     }}>
-                        <Box component='img' src={w.img} alt=''
-                           sx={{ height: '100px', width: '100px', }} />
-                        {/* <Typography variant="h6" fontWeight='600' component="h4">{w.txt}</Typography> */}
-                        <Typography>{w.txt}</Typography>
-                     </Box>)}
+                        }}>
+                           <Box><Box component='img' src={w.img} alt=''
+                              sx={{ height: '100px', width: '100px', }} />
+                              <Typography color='primary' fontWeight='600'>{w.txt}</Typography></Box>
+
+                        </Box>)}
 
                   </Stack>
                </Box>
