@@ -5,8 +5,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box } from '@mui/material';
+import useTitle from '../Hooks/useTitle';
 
 const FAQ = () => {
+   useTitle('FAQ')
+
    return (
       <Box sx={{
          margin: '0 auto',
