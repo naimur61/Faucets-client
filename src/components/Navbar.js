@@ -160,9 +160,15 @@ const Navbar = () => {
                   position: ' absolute',
                   transform: ' translate(-50%,-50%)',
                }}>
-               <Typography id="modal-modal-title" variant="h5" fontWeight='600' component="h2" sx={{ marginLeft: { xs: '-1.5rem', md: 0 }, lineBreak: 'anywhere' }}>
-                  Connect your wallet
-               </Typography>
+               <Stack id="modal-modal-title" direction='row' justifyContent='space-between' sx={{ mx: { xs: '-2rem', lg: 0 } }}>
+                  <Typography variant="h5" fontWeight='600' component="h2">
+                     Connect your wallet
+                  </Typography>
+
+                  <Typography variant="h5" fontWeight='600' component="h2" sx={{ cursor: 'pointer' }} onClick={handleClose}>
+                     X
+                  </Typography>
+               </Stack>
 
                <Box id="modal-modal-description" sx={{ mt: 2 }}>
                   <Stack direction={{ xs: 'column', lg: 'row' }} alignItems='center' spacing={2}>
