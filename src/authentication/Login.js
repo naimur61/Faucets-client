@@ -29,6 +29,7 @@ const Login = () => {
       display: 'flex',
       height: '80vh',
       justifyContent: 'center',
+      background: '#EEF2FE'
     }}>
 
       <Box

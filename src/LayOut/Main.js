@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
@@ -10,11 +9,7 @@ const Main = () => {
    return (
       <div>
          <Navbar />
-         <Box sx={{
-            background: '#EEF2FE', fontFamily: "Varela Round,sans-serif"
-         }}>
-            <Outlet />
-         </Box>
+         <Outlet />
          <Footer />
       </div>
    );
