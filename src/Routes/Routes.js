@@ -4,6 +4,7 @@ import Login from '../Pages/authentication/Login';
 import Registration from '../Pages/authentication/Registration';
 import FAQ from '../Pages/FAQ';
 import Home from '../Pages/Home';
+import Users from '../Pages/Users';
 
 
 
@@ -16,6 +17,7 @@ export const Routes = createBrowserRouter([
          { path: '/home', element: <Home /> },
          { path: '/login', element: <Login /> },
          { path: '/faq', element: <FAQ /> },
+         { path: '/users', element: <Users /> },
          { path: '/registration', element: <Registration /> },
          // { path: '/login', element: <Login /> },
          // { path: '/signup', element: <SignUp /> },

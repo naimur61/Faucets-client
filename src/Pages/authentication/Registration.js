@@ -4,26 +4,69 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useForm } from 'react-hook-form';
 import Link from '@mui/material/Link';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { Stack } from '@mui/system';
 import useTitle from '../../Hooks/useTitle';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Registration = () => {
    useTitle('Signup')
    const [showPassword, setShowPassword] = useState(false);
    const navigate = useNavigate();
+   const location = useLocation();
+   const { register, handleSubmit, formState: { errors }, reset } = useForm();
+   const from = location.state?.from?.pathname || '/';
 
-   const { register, handleSubmit, formState: { errors } } = useForm();
-   const onSubmit = data => console.log(data);
+
+
+   const onSubmit = (data) => {
+      const email = data?.username;
+      const password = data?.password;
+
+      axios.post("http://localhost:5000/api/user/register", { email, password })
+         .then((res) => {
+            console.log(res);
+            successToast("User is register");
+            navigate(from, { replace: true });
+         })
+         .catch((err) => errorToast(err.response.data))
+   };
 
    const handleClickShowPassword = () => setShowPassword((show) => !show);
 
    const handleMouseDownPassword = (event) => {
       event.preventDefault();
    };
+
+   const successToast = (er) => {
+      toast.success(er, {
+         position: "top-center",
+         autoClose: 1000,
+         hideProgressBar: false,
+         closeOnClick: true,
+         pauseOnHover: true,
+         draggable: true,
+         progress: undefined,
+         theme: "colored",
+      });
+   }
+   const errorToast = (er) => {
+      toast.error(er, {
+         position: "top-center",
+         autoClose: 5000,
+         hideProgressBar: false,
+         closeOnClick: true,
+         pauseOnHover: true,
+         draggable: true,
+         progress: undefined,
+         theme: "colored",
+      });
+   }
+
 
    return (
       <Box sx={{
@@ -96,6 +139,7 @@ const Registration = () => {
 
 
                <Button type="submit" fullWidth={true} variant="contained" sx={{ my: '20px' }}>Signup</Button>
+               <ToastContainer />
             </Box>
             <Box sx={{
                textAlign: 'center', fontWeight: 600, fontSize: '13px'
